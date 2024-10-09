@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function ProductList() {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
-    const [addedToCart, setAddedToCart] = useState({});
+    
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.items);
     const totalItemsInCart = cartItems.reduce((total, item) => total + item.quantity,0);
@@ -232,7 +232,7 @@ function ProductList() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '1100px',
+        width: '52%'
     }
     const styleA = {
         color: 'white',
@@ -253,7 +253,7 @@ function ProductList() {
         e.preventDefault();
         setShowCart(false);
     };
-
+    const [addedToCart, setAddedToCart] = useState({});
 
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
@@ -263,7 +263,7 @@ function ProductList() {
         }));
 
     };
-
+    
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -272,8 +272,8 @@ function ProductList() {
                         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                         <a href="/" style={{ textDecoration: 'none' }}>
                             <div>
-                                <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
-                                <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
+                                <h3 style={{ color: 'white', paddingLeft: '10px' }}>Paradise Nursery</h3>
+                                <i style={{ color: 'white', paddingLeft: '10px' }}>Where Green Meets Serenity</i>
                             </div>
                         </a>
                     </div>
@@ -288,7 +288,7 @@ function ProductList() {
                 <div className="product-grid">
                     {plantsArray.map((category, index) => (
                         <div key={index}>
-                            <h1>{category.category}</h1>
+                            <h1 style={{textAlign: 'center', marginTop: '10px'}}>{category.category}</h1>
                             <div className="product-list">
                                 {category.plants.map((plant, plantIndex) => (
                                     <div className="product-card" key={plantIndex}>
