@@ -303,6 +303,6 @@ const handlePlantsClick = (e) => {
 )}
     </div>
     );
-}
+
 
 export default ProductList;
