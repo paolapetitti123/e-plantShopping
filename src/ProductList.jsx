@@ -232,7 +232,7 @@ function ProductList() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '52%'
+        width: '52% '
     }
     const styleA = {
         color: 'white',
